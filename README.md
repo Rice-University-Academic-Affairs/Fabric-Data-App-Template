@@ -1,6 +1,6 @@
 # Minimal Fabric Data App Template
 
-SvelteKit temaplte for Fabric Apps
+SvelteKit template for Fabric Apps
 
 ## New project from this template
 
