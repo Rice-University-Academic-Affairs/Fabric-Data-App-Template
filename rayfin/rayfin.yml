@@ -1,5 +1,5 @@
-id: minimal-app
-name: minimal-app
+id: fabric-data-app-template
+name: fabric-data-app-template
 version: 1.0.0
 services:
   auth:

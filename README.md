@@ -4,17 +4,29 @@ Framework-agnostic template for Fabric Apps: Rayfin embedded auth + DAX queries 
 
 ## New project from this template
 
-### 1. Copy and rename
+### 1. Clone and name your app
+
+Pick a name for your app (e.g. `enrollment-dashboard`). Use it as the clone folder name:
 
 ```bash
-cp -r minimal-app my-new-app
-cd my-new-app
+git clone https://github.com/Rice-University-Academic-Affairs/Fabric-Data-App-Template.git enrollment-dashboard
+cd enrollment-dashboard
 ```
 
-Set your app name in two places (this becomes the Fabric App Backend name on deploy):
+Then replace the template placeholder `fabric-data-app-template` in these two files with the same name. This is the name that appears as your **Fabric App Item** in Fabric.
 
-- `rayfin/rayfin.yml` — `id` and `name`
-- `package.json` — `"name"`
+**`rayfin/rayfin.yml`**
+```yaml
+id: enrollment-dashboard
+name: enrollment-dashboard
+```
+
+**`package.json`**
+```json
+"name": "enrollment-dashboard"
+```
+
+Use lowercase with hyphens. The folder name, `rayfin.yml` `id`/`name`, and `package.json` `name` should all match.
 
 ### 2. Install Node and dependencies
 

@@ -1,5 +1,5 @@
 {
-  "name": "minimal-app",
+  "name": "fabric-data-app-template",
   "description": "Minimal Fabric Apps data layer with Rayfin auth and DAX query support.",
   "private": true,
   "version": "0.0.0",
