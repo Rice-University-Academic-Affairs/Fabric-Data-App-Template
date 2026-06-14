@@ -1,9 +1,10 @@
-import { defineConfig, type PluginOption } from "vite";
+import adapter from "@sveltejs/adapter-static";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { resolve } from "path";
 
 const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname;
 
-const localNetworkAccessPlugin: PluginOption = {
+const localNetworkAccessPlugin = {
     name: "local-network-access-headers",
     configureServer(server) {
         server.middlewares.use((req, res, next) => {
@@ -23,16 +24,27 @@ const localNetworkAccessPlugin: PluginOption = {
     },
 };
 
-export default defineConfig({
-    plugins: [localNetworkAccessPlugin],
-    resolve: {
+export default {
+    preprocess: vitePreprocess(),
+    compilerOptions: {
+        runes: true,
+    },
+    kit: {
+        adapter: adapter({
+            fallback: "index.html",
+            strict: false,
+        }),
         alias: {
             "@": resolve(projectRoot, "src"),
         },
     },
-    build: {
-        commonjsOptions: {
-            include: [/node_modules/],
+    vite: {
+        envPrefix: "VITE_",
+        plugins: [localNetworkAccessPlugin],
+        build: {
+            commonjsOptions: {
+                include: [/node_modules/],
+            },
         },
     },
-});
+};

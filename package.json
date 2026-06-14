@@ -1,16 +1,18 @@
 {
   "name": "fabric-data-app-template",
-  "description": "Minimal Fabric Apps data layer with Rayfin auth and DAX query support.",
+  "description": "SvelteKit SPA template for Fabric Apps with Rayfin auth and DAX query support.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "predev": "rayfin env --framework vite",
     "prebuild": "rayfin env --framework vite",
-    "dev": "vite",
-    "build": "node node_modules/@microsoft/fabric-app-data-cli/dist/index.js generate -o src/fabric.generated.ts && tsc -b --noCheck && vite build",
-    "build:fabric": "node node_modules/@microsoft/fabric-app-data-cli/dist/index.js generate -o src/fabric.generated.ts && tsc -b --noCheck && vite build",
-    "preview": "vite preview"
+    "dev": "vite dev",
+    "build": "node node_modules/@microsoft/fabric-app-data-cli/dist/index.js generate -o src/fabric.generated.ts && svelte-kit sync && vite build",
+    "build:fabric": "node node_modules/@microsoft/fabric-app-data-cli/dist/index.js generate -o src/fabric.generated.ts && svelte-kit sync && vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "prepare": "svelte-kit sync"
   },
   "dependencies": {
     "@microsoft/fabric-app-data": "1.0.0",
@@ -19,13 +21,18 @@
     "@microsoft/rayfin-auth": "^1.32.0",
     "@microsoft/rayfin-auth-provider-fabric": "^1.32.0",
     "@microsoft/rayfin-client": "^1.32.0",
-    "arquero": "^8.0.3"
+    "arquero": "^8.0.3",
+    "svelte": "^5.39.0"
   },
   "devDependencies": {
     "@microsoft/fabric-app-data-cli": "1.0.0",
     "@microsoft/fabric-app-data-cli-proxy": "1.0.0",
     "@microsoft/rayfin-cli": "^1.23.0",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.49.0",
+    "@sveltejs/vite-plugin-svelte": "^6.2.0",
     "@types/node": "^22.15.0",
+    "svelte-check": "^4.3.0",
     "typescript": "~5.7.2",
     "vite": "^7.2.6"
   }
