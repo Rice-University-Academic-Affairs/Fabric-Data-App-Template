@@ -18,7 +18,8 @@
     "@microsoft/fabric-app-data-proxy": "1.0.0",
     "@microsoft/rayfin-auth": "^1.32.0",
     "@microsoft/rayfin-auth-provider-fabric": "^1.32.0",
-    "@microsoft/rayfin-client": "^1.32.0"
+    "@microsoft/rayfin-client": "^1.32.0",
+    "arquero": "^8.0.3"
   },
   "devDependencies": {
     "@microsoft/fabric-app-data-cli": "1.0.0",

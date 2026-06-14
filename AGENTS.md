@@ -19,7 +19,7 @@ src/
 ├── lib/
 │   ├── rayfin-client.ts         # getRayfinClient()
 │   ├── fabric-client.ts         # getFabricClient()
-│   └── query-semantic-model.ts  # querySemanticModel(), clearQueryCache()
+│   └── query-semantic-model.ts  # readSemanticModelTable(), clearQueryCache()
 └── vite-env.d.ts          # Vite type declarations
 ```
 
@@ -34,16 +34,18 @@ const session = await bootstrapAuth().initEmbeddedAuth();
 // session?.isAuthenticated — true when running inside Fabric iframe
 ```
 
-### DAX Queries
+### Semantic Model Tables
 
 ```ts
-import { querySemanticModel } from "@/lib/query-semantic-model";
+import { readSemanticModelTable } from "@/lib/query-semantic-model";
 
-const result = await querySemanticModel("default", 'EVALUATE ROW("test", 1)');
+const result = await readSemanticModelTable("default", "Sales");
 if (result.status === "success") {
-  const { columns, rows } = result.table;
+  const rows = result.table.filter((d) => d.Amount > 0).objects();
 }
 ```
+
+`readSemanticModelTable` runs `EVALUATE <table>` internally and returns an [Arquero](https://github.com/uwdata/arquero) `ColumnTable` on success. Pass the plain table name (e.g. `Sales`, `Sales Order`) — DAX quoting is handled for you. Column names are simplified from `Table[Column]` to `Column` (e.g. `Faculty ID` instead of `Faculty[Faculty ID]`).
 
 The SDK never throws on query failures — check `result.status === "error"` and read `result.error.message`.
 
@@ -56,10 +58,10 @@ node node_modules/@microsoft/fabric-app-data-cli/dist/index.js add <alias> --fro
 node node_modules/@microsoft/fabric-app-data-cli/dist/index.js generate -o src/fabric.generated.ts
 ```
 
-Test queries with:
+Discover table names with:
 
 ```bash
-node node_modules/@microsoft/fabric-app-data-cli/dist/index.js query <alias> --query "EVALUATE ROW(\"test\", 1)"
+node node_modules/@microsoft/fabric-app-data-cli/dist/index.js query <alias> --query "EVALUATE INFO.VIEW.TABLES()"
 ```
 
 ## Critical Rules
