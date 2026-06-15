@@ -1,6 +1,6 @@
 # Minimal Fabric Data App Template
 
-SvelteKit template for Fabric Apps with VPAA design tokens and shadcn-svelte theming (on the `svelte-vpaa` branch).
+Framework-agnostic template for Fabric Apps: Rayfin embedded auth + DAX queries against a semantic model.
 
 ## New project from this template
 
@@ -8,7 +8,7 @@ SvelteKit template for Fabric Apps with VPAA design tokens and shadcn-svelte the
 
 Pick a name for your app (e.g. `enrollment-dashboard`). Use lowercase with hyphens. 
 
-Clone this template, using your app's name:
+Clone the this template, using your app's name:
 
 ```bash
 git clone https://github.com/Rice-University-Academic-Affairs/Fabric-Data-App-Template.git enrollment-dashboard
@@ -93,12 +93,4 @@ Verify:
 npx rayfin up status
 ```
 
-## UI components
-
-Add shadcn-svelte components from WSL:
-
-```bash
-npx shadcn-svelte@latest add button
-```
-
-Theme tokens live in `src/styles/`. See `AGENTS.md` for details.
+Replace `src/main.ts` with your own frontend entry point.
