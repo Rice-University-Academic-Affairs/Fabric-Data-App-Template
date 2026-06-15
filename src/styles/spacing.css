@@ -1,0 +1,66 @@
+/* ============================================================
+   VPAA Design System — Spacing, Radius, Borders, Elevation
+   Dense, hairline-bordered, near-flat. Shadows are rare and
+   barely-there — structure comes from 0.5px borders, not depth.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---------------------------- */
+  --space-0:   0;
+  --space-1:   2px;
+  --space-2:   4px;
+  --space-3:   6px;
+  --space-4:   8px;
+  --space-5:   10px;
+  --space-6:   12px;
+  --space-7:   14px;
+  --space-8:   16px;
+  --space-9:   18px;
+  --space-10:  20px;
+  --space-12:  24px;
+  --space-14:  28px;
+  --space-16:  32px;
+  --space-20:  40px;
+
+  /* ---- Semantic spacing ------------------------------------ */
+  --pad-card:        var(--space-8) var(--space-9);   /* 16/18  */
+  --pad-card-lg:     var(--space-9) var(--space-10);  /* 18/20  */
+  --pad-cell:        11px var(--space-8);             /* table  */
+  --pad-control:     7px var(--space-7);              /* button */
+  --pad-control-sm:  var(--space-2) var(--space-5);   /* 4/10   */
+  --gap-grid:        var(--space-5);                  /* 10     */
+  --gap-tight:       var(--space-4);                  /* 8      */
+  --section-x:       22px;                            /* page gutter */
+
+  /* ---- Radius ---------------------------------------------- */
+  --radius-xs:    4px;   /* tiny buttons, chips                 */
+  --radius-sm:    5px;   /* inset controls                      */
+  --radius-md:    6px;   /* buttons, segmented controls         */
+  --radius-lg:    8px;   /* cards, panels                       */
+  --radius-xl:   10px;   /* app container shell                 */
+  --radius-pill: 100px;  /* badges, avatars-as-pill             */
+  --radius-full: 50%;    /* avatars                             */
+
+  /* ---- Border widths --------------------------------------- */
+  --bw-hair:   0.5px;    /* the signature hairline              */
+  --bw-thin:   1px;
+  --bw-tab:    2px;      /* active nav / tab underline          */
+
+  /* ---- Elevation (used sparingly) -------------------------- */
+  --shadow-none:  none;
+  --shadow-xs:    0 1px 2px rgba(0, 32, 91, 0.04);
+  --shadow-sm:    0 2px 8px rgba(0, 32, 91, 0.06);
+  --shadow-md:    0 6px 20px rgba(0, 32, 91, 0.10);
+  --shadow-pop:   0 8px 28px rgba(0, 32, 91, 0.14);  /* dialog  */
+
+  /* ---- Motion ---------------------------------------------- */
+  --ease-standard: cubic-bezier(0.2, 0, 0.1, 1);   /* @kind other */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);  /* @kind other */
+  --dur-fast:      120ms;  /* @kind other */
+  --dur-base:      180ms;  /* @kind other */
+  --dur-slow:      260ms;  /* @kind other */
+
+  /* ---- Layout --------------------------------------------- */
+  --header-h:     48px;
+  --container-max: 1100px;
+}

@@ -1,0 +1,83 @@
+/* ============================================================
+   VPAA Design System — Color Tokens
+   Rooted in Rice University's brand: Rice Blue (PMS 280) + Sky.
+   Flat, institutional, data-forward. Hairline borders, no candy.
+   ============================================================ */
+
+:root {
+  /* ---- Brand primitives ------------------------------------ */
+  --rice-blue:        #00205B;   /* Rice Blue, PMS 280 — primary */
+  --rice-blue-700:    #1a2f5e;   /* container outline on navy    */
+  --rice-blue-ink:    #001640;   /* pressed / deepest navy       */
+
+  --sky-100:          #9FDDF9;   /* Rice Sky — light accent      */
+  --sky-300:          #4D9AD4;   /* medium sky — interactive     */
+  --sky-500:          #005A8E;   /* deep sky — text on tint      */
+  --sky-muted:        #ADC7DC;   /* desaturated sky — chart base */
+
+  /* ---- Neutrals (cool gray ramp) --------------------------- */
+  --white:            #ffffff;
+  --gray-50:          #f7f8f9;   /* app canvas                   */
+  --gray-100:         #f5f6f8;   /* subtle fill / inset control  */
+  --gray-150:         #f0f2f5;   /* avatar fill, faint surface   */
+  --gray-200:         #e8eaed;   /* table header fill            */
+  --gray-250:         #e2e5ea;   /* default hairline border      */
+  --gray-300:         #d8dadd;   /* stronger divider             */
+  --gray-350:         #d0d3d8;   /* button border                */
+  --gray-400:         #c0c4cc;   /* placeholder text             */
+  --gray-500:         #7C7E7F;   /* muted / secondary text       */
+  --gray-700:         #44474F;   /* body text                    */
+
+  /* ---- Semantic status hues -------------------------------- */
+  --green-500:        #359245;   /* approved / positive          */
+  --green-700:        #1D6129;   /* approved text                */
+  --amber-500:        #C77D26;   /* attention / review           */
+  --amber-700:        #8A5410;   /* attention text               */
+  --red-500:          #C0392B;   /* error / declined             */
+  --red-700:          #8E261B;   /* error text                   */
+
+  /* ---- Semantic aliases ------------------------------------ */
+  --surface-canvas:   var(--gray-50);
+  --surface-card:     var(--white);
+  --surface-inset:    var(--gray-100);
+  --surface-header:   var(--rice-blue);
+  --surface-accent:   rgba(159, 221, 249, 0.10);  /* sky tint card */
+
+  --text-strong:      var(--rice-blue);   /* headings, key figures */
+  --text-body:        var(--gray-700);
+  --text-muted:       var(--gray-500);
+  --text-placeholder: var(--gray-400);
+  --text-on-navy:     #ffffff;
+  --text-on-navy-dim: rgba(255, 255, 255, 0.45);
+
+  --border-hairline:  var(--gray-250);
+  --border-strong:    var(--gray-300);
+  --border-control:   var(--gray-350);
+  --border-accent:    rgba(159, 221, 249, 0.40);
+  --border-on-navy:   rgba(255, 255, 255, 0.12);
+
+  --accent:           var(--sky-300);     /* primary interactive   */
+  --accent-hover:     #3d8ac4;
+  --focus-ring:       rgba(77, 154, 212, 0.45);
+
+  /* ---- Status background tints (badges, cells) ------------- */
+  --tint-info-bg:     rgba(159, 221, 249, 0.22);
+  --tint-info-fg:     var(--sky-500);
+  --tint-navy-bg:     rgba(0, 32, 91, 0.08);
+  --tint-navy-fg:     var(--rice-blue);
+  --tint-success-bg:  rgba(53, 146, 69, 0.10);
+  --tint-success-fg:  var(--green-700);
+  --tint-amber-bg:    rgba(199, 125, 38, 0.10);
+  --tint-amber-fg:    var(--amber-700);
+  --tint-error-bg:    rgba(192, 57, 43, 0.09);
+  --tint-error-fg:    var(--red-700);
+  --tint-neutral-bg:  rgba(124, 126, 127, 0.12);
+  --tint-neutral-fg:  var(--gray-700);
+
+  /* ---- Data-viz sequence (ordered) ------------------------- */
+  --viz-1: var(--rice-blue);
+  --viz-2: var(--sky-300);
+  --viz-3: var(--sky-100);
+  --viz-4: var(--sky-muted);
+  --viz-5: var(--gray-250);
+}

@@ -1,6 +1,6 @@
 # Minimal Fabric Data App Template
 
-SvelteKit template for Fabric Apps
+SvelteKit template for Fabric Apps with VPAA design tokens and shadcn-svelte theming (on the `svelte-vpaa` branch).
 
 ## New project from this template
 
@@ -92,3 +92,13 @@ Verify:
 ```bash
 npx rayfin up status
 ```
+
+## UI components
+
+Add shadcn-svelte components from WSL:
+
+```bash
+npx shadcn-svelte@latest add button
+```
+
+Theme tokens live in `src/styles/`. See `AGENTS.md` for details.

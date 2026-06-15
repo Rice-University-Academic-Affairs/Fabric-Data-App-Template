@@ -1,9 +1,11 @@
 <script lang="ts">
-    let { data, children } = $props();
+	import "../app.css";
+
+	let { data, children } = $props();
 </script>
 
 {#if !data.authenticated}
-    <p>Open this app inside the Fabric portal.</p>
+	<p>Open this app inside the Fabric portal.</p>
 {:else}
-    {@render children()}
+	{@render children()}
 {/if}
