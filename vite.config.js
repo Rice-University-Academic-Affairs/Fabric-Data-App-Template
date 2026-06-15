@@ -1,9 +1,7 @@
-import { defineConfig, type PluginOption } from "vite";
-import { resolve } from "path";
+import { sveltekit } from "@sveltejs/kit/vite";
+import tailwindcss from "@tailwindcss/vite";
 
-const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname;
-
-const localNetworkAccessPlugin: PluginOption = {
+const localNetworkAccessPlugin = {
     name: "local-network-access-headers",
     configureServer(server) {
         server.middlewares.use((req, res, next) => {
@@ -23,16 +21,12 @@ const localNetworkAccessPlugin: PluginOption = {
     },
 };
 
-export default defineConfig({
-    plugins: [localNetworkAccessPlugin],
-    resolve: {
-        alias: {
-            "@": resolve(projectRoot, "src"),
-        },
-    },
+export default {
+    plugins: [tailwindcss(), sveltekit(), localNetworkAccessPlugin],
+    envPrefix: "VITE_",
     build: {
         commonjsOptions: {
             include: [/node_modules/],
         },
     },
-});
+};
